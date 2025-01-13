@@ -56,9 +56,9 @@ export default {
   <div>
     <h1>Timer-re</h1>
     <p><span>{{ String(horas).padStart(2, "0") }}:{{ String(minutos).padStart(2, "0") }}:{{ String(segundos).padStart(2, "0") }}</span></p>
-    <button v-if="mostrarIniciar" @click="iniciar">Começar</button>
-    <button v-if="mostrarControls" @click="parar">Parar</button>
-    <button v-if="mostrarControls" @click="resetar">Resetar</button>
+    <button v-if="mostrarIniciar" @click="iniciar"><i class="fas fa-play"></i></button>
+    <button v-if="mostrarControls" @click="parar"><i class="fas fa-pause"></button>
+    <button v-if="mostrarControls" @click="resetar"><i class="fas fa-undo"></button>
   </div>
   `,
 }
