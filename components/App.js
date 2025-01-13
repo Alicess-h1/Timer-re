@@ -39,6 +39,23 @@ export default {
       this.rodando = false;
       }
     },
+    retomar() {
+      if (!this.rodando) {
+        this.rodando = true;
+        this.intervalo = setInterval(() => {
+          this.segundos += 1;
+          if (this.segundos === 60) {
+            this.segundos = 0;
+            this.minutos += 1;
+          }
+
+          if (this.minutos === 60) {
+            this.minutos = 0;
+            this.horas += 1;
+          }
+        }, 1000);
+      }
+    },
     resetar() {
       this.mostrarIniciar = true;
       this.mostrarControls = false;
@@ -57,6 +74,7 @@ export default {
     <h1>Timer-re</h1>
     <p><span>{{ String(horas).padStart(2, "0") }}:{{ String(minutos).padStart(2, "0") }}:{{ String(segundos).padStart(2, "0") }}</span></p>
     <button v-if="mostrarIniciar" @click="iniciar"><i class="fas fa-play"></i></button>
+    <button v-if="mostrarControls" @click="retomar"><i class="fas fa-forward"></button>
     <button v-if="mostrarControls" @click="parar"><i class="fas fa-pause"></button>
     <button v-if="mostrarControls" @click="resetar"><i class="fas fa-undo"></button>
   </div>
