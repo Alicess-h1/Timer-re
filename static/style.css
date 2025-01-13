@@ -3,17 +3,42 @@ html {
   width: 100%;
 }
 
+/* Mudei pra poder ficar mais arredondado e mudei a fonte para algo mais compativel com o bg*/
 button {
+  font-family: "Plus Jakarta Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 20px;
+  font-style: normal;
   margin-left: 10px;
-  background-color: #0284c7;
+  background-color: #000000;
+  color: aliceblue;
   width: 100px;
   height: 50px;
   border: none;
-  border-radius: 10px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button i,
+button span.material-icons {
+  font-size: 16px;
+  margin-right: 0px; 
+  vertical-align: middle; 
+  color: white; 
+}
+
+button:hover {
+  background-color: #2e2e2e;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Outfit, sans-serif;
   color: white;
   background-color: #111827;
 }
@@ -27,9 +52,9 @@ body {
 span {
   border-radius: 5px;
   font-size: 50px;
-  width: 200px;
-  height: 50px;
-  background-color: #7dd3fc;
+  width: 220px;
+  height: 65px;
+  background-color: #1f1f1f;
 }
 
 p {
@@ -38,6 +63,6 @@ p {
   align-items: center;
   width: 300px;
   height: 80px;
-  border-radius: 5px;
-  background-color: #0284c7;
+  border-radius: 40px;
+  background-color: #1f1f1f;
 }
